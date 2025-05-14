@@ -10,13 +10,14 @@ BOT_TOKEN = "8123988386:AAFb1OxBISbGYjr1FI-f5bOtQwLo2VLaw7g"
 BASE_URL = "https://opabhik.serv00.net/Watch.php?url="  
 DOWNLOAD_BASE = "https://teradownloader.com/download?w=0&link="  
 TERABOX_PATTERN = r"https?://(?:\w+\.)?(terabox|1024terabox|freeterabox|teraboxapp|tera|teraboxlink|mirrorbox|nephobox|1024tera|momerybox|tibibox|terasharelink|teraboxshare|terafileshare)\.\w+"  
-LOG_CHANNEL_ID = "-1001564742493"  
-FSUB_CHANNEL_ID = "-1001940661697"  
+LOG_CHANNEL_ID = "-1001756314623"  
+FSUB_CHANNEL_ID = "-1001756314623"  
 FSubLink = "https://t.me/+uIUIXBApb7s5M2I1"  
 
 # Database Configuration (Add this)
 DB_URL = "mongodb+srv://jiosaavn:jiosaavn@cluster0.ouhhe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"  
-DB_NAME = "terabot_db"  
+DB_NAME = "terabot_db" 
+ADMIN = "1682063337"
 
 async def check_subscription(user_id, bot):  
     """Check if a user is a member of the required channel."""  
