@@ -2,16 +2,21 @@ from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes  
 from bs4 import BeautifulSoup  
 import re  
-import aiohttp  # Using aiohttp for async HTTP requests  
+import aiohttp  
 from web import keep_alive  
 
+# Bot Configuration
 BOT_TOKEN = "bot_token"  
 BASE_URL = "https://opabhik.serv00.net/Watch.php?url="  
 DOWNLOAD_BASE = "https://teradownloader.com/download?w=0&link="  
 TERABOX_PATTERN = r"https?://(?:\w+\.)?(terabox|1024terabox|freeterabox|teraboxapp|tera|teraboxlink|mirrorbox|nephobox|1024tera|momerybox|tibibox|terasharelink|teraboxshare|terafileshare)\.\w+"  
-LOG_CHANNEL_ID = "-1001564742493"  # Replace with your actual log channel's ID  
-FSUB_CHANNEL_ID = "-1001940661697"  # Replace with your force subscription channel ID  
-FSubLink = "https://t.me/+uIUIXBApb7s5M2I1"  # Replace with your actual channel link  
+LOG_CHANNEL_ID = "-1001564742493"  
+FSUB_CHANNEL_ID = "-1001940661697"  
+FSubLink = "https://t.me/+uIUIXBApb7s5M2I1"  
+
+# Database Configuration (Add this)
+DB_URL = "mongodb+srv://username:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority"  
+DB_NAME = "terabot_db"  
 
 async def check_subscription(user_id, bot):  
     """Check if a user is a member of the required channel."""  
@@ -20,7 +25,7 @@ async def check_subscription(user_id, bot):
         return member.status in ["member", "administrator", "creator"]  
     except Exception as e:  
         print(f"Error in check_subscription: {e}")  
-        return False  
+        return False    
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):  
     """Start command to welcome the user with an image and button."""  
