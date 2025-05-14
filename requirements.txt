@@ -4,3 +4,6 @@ asyncio
 aiohttp
 requests
 beautifulsoup4
+pyrogram>=2.0.0
+pymongo>=4.0.0
+motor>=3.0.0  # Async MongoDB driver for Pyrogram
